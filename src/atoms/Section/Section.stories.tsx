@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import Section from ".";
+import Button from "../Button";
 
 /**
  * The Section component is a container with no fixed height.
@@ -22,7 +23,7 @@ import Section from ".";
  * ```
  */
 const meta = {
-  title: "MyComponents/Section",
+  title: "Atoms/Section",
   component: Section,
   parameters: {
     layout: "fullscreen",
@@ -136,9 +137,9 @@ export const WithMultipleElements: Story = {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-        <button style={{ padding: "10px 20px", cursor: "pointer" }}>
+        <Button>
           Learn More
-        </button>
+        </Button>
       </Section.Inner>
     </Section>
   ),
@@ -170,43 +171,117 @@ export const StackedSections: Story = {
 };
 
 /**
- * Section with a list of items.
+ * Two column layout (50/50 split).
  */
-export const WithList: Story = {
+export const TwoColumnsEqual: Story = {
   args: {},
   render: () => (
     <Section>
       <Section.Inner>
-        <h2>Features</h2>
-        <ul>
-          <li>Flexible container with no fixed height</li>
-          <li>Centered content with max-width constraint</li>
-          <li>Responsive padding and spacing</li>
-          <li>Semantic HTML using section element</li>
-        </ul>
+        <Section.Column>
+          <h3>Left Column</h3>
+          <p>This is the left column content. Both columns are equal width.</p>
+        </Section.Column>
+        <Section.Column>
+          <h3>Right Column</h3>
+          <p>This is the right column content. They stack on mobile.</p>
+        </Section.Column>
       </Section.Inner>
     </Section>
   ),
 };
 
 /**
- * Section with form elements.
+ * Two column layout (60/40 split).
  */
-export const WithForm: Story = {
+export const TwoColumnsUnequal: Story = {
   args: {},
   render: () => (
     <Section>
       <Section.Inner>
-        <h2>Contact Us</h2>
-        <p>Fill out the form below to get in touch.</p>
-        <form style={{ display: "flex", flexDirection: "column", gap: "10px", maxWidth: "400px" }}>
-          <input type="text" placeholder="Your name" style={{ padding: "8px" }} />
-          <input type="email" placeholder="Your email" style={{ padding: "8px" }} />
-          <textarea placeholder="Your message" rows={4} style={{ padding: "8px" }} />
-          <button type="submit" style={{ padding: "10px", cursor: "pointer" }}>
-            Send Message
-          </button>
-        </form>
+        <Section.Column width={3}>
+          <h3>Wider Column (60%)</h3>
+          <p>This column takes up 60% of the space (width=3).</p>
+        </Section.Column>
+        <Section.Column width={2}>
+          <h3>Narrower Column (40%)</h3>
+          <p>This column takes up 40% of the space (width=2).</p>
+        </Section.Column>
+      </Section.Inner>
+    </Section>
+  ),
+};
+
+/**
+ * Three column layout (33/33/33 split).
+ */
+export const ThreeColumns: Story = {
+  args: {},
+  render: () => (
+    <Section>
+      <Section.Inner>
+        <Section.Column>
+          <h3>Column 1</h3>
+          <p>Equal width column.</p>
+        </Section.Column>
+        <Section.Column>
+          <h3>Column 2</h3>
+          <p>Equal width column.</p>
+        </Section.Column>
+        <Section.Column>
+          <h3>Column 3</h3>
+          <p>Equal width column.</p>
+        </Section.Column>
+      </Section.Inner>
+    </Section>
+  ),
+};
+
+/**
+ * Four column layout (25/25/25/25 split).
+ */
+export const FourColumns: Story = {
+  args: {},
+  render: () => (
+    <Section>
+      <Section.Inner gap="15px">
+        <Section.Column>
+          <h4>Feature 1</h4>
+          <p>First feature.</p>
+        </Section.Column>
+        <Section.Column>
+          <h4>Feature 2</h4>
+          <p>Second feature.</p>
+        </Section.Column>
+        <Section.Column>
+          <h4>Feature 3</h4>
+          <p>Third feature.</p>
+        </Section.Column>
+        <Section.Column>
+          <h4>Feature 4</h4>
+          <p>Fourth feature.</p>
+        </Section.Column>
+      </Section.Inner>
+    </Section>
+  ),
+};
+
+/**
+ * Columns with background colors to visualize the layout.
+ */
+export const ColumnsWithBackground: Story = {
+  args: {},
+  render: () => (
+    <Section style={{ padding: "40px 0" }}>
+      <Section.Inner gap="30px">
+        <Section.Column width={2} style={{ backgroundColor: "#e3f2fd", padding: "20px" }}>
+          <h3>Main Content (66%)</h3>
+          <p>This wider column could contain your main content or article.</p>
+        </Section.Column>
+        <Section.Column width={1} style={{ backgroundColor: "#fff3e0", padding: "20px" }}>
+          <h3>Sidebar (33%)</h3>
+          <p>This narrower column works well for sidebars or supplementary information.</p>
+        </Section.Column>
       </Section.Inner>
     </Section>
   ),

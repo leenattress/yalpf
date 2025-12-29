@@ -70,7 +70,7 @@ describe("Section", () => {
 
         // Assert
         expect(container).toHaveStyle(`
-    font-family: sans-serif;
+    width: 100%;
     `);
     });
 
@@ -110,5 +110,78 @@ describe("Section", () => {
         expect(inner).toHaveStyle(`
     max-width: 1200px;
     `);
+    });
+
+    it("renders columns inside inner", () => {
+        // Arrange
+        const { getByTestId } = render(
+            <Section>
+                <Section.Inner>
+                    <Section.Column>Column 1</Section.Column>
+                    <Section.Column>Column 2</Section.Column>
+                </Section.Inner>
+            </Section>
+        );
+
+        // Act
+        const inner = getByTestId("section-inner");
+
+        // Assert
+        expect(inner).toBeInTheDocument();
+    });
+
+    it("renders column items", () => {
+        // Arrange
+        const { getAllByTestId } = render(
+            <Section>
+                <Section.Inner>
+                    <Section.Column>Column 1</Section.Column>
+                    <Section.Column>Column 2</Section.Column>
+                </Section.Inner>
+            </Section>
+        );
+
+        // Act
+        const columns = getAllByTestId("section-column");
+
+        // Assert
+        expect(columns).toHaveLength(2);
+    });
+
+    it("applies custom width to column", () => {
+        // Arrange
+        const { getAllByTestId } = render(
+            <Section>
+                <Section.Inner>
+                    <Section.Column width={2}>Wide column</Section.Column>
+                    <Section.Column width={1}>Narrow column</Section.Column>
+                </Section.Inner>
+            </Section>
+        );
+
+        // Act
+        const columns = getAllByTestId("section-column");
+
+        // Assert
+        expect(columns[0]).toHaveStyle("flex: 2");
+        expect(columns[1]).toHaveStyle("flex: 1");
+    });
+
+    it("applies custom gap to inner with columns", () => {
+        // Arrange
+        const { getByTestId } = render(
+            <Section>
+                <Section.Inner gap="40px">
+                    <Section.Column>Column 1</Section.Column>
+                    <Section.Column>Column 2</Section.Column>
+                </Section.Inner>
+            </Section>
+        );
+
+        // Act
+        const inner = getByTestId("section-inner");
+
+        // Assert
+        expect(inner).toHaveStyle("gap: 40px");
     });
 });

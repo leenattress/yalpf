@@ -1,4 +1,3 @@
-export interface PageProps {
-  title: string
-  children: React.ReactNode
+export interface PageProps extends React.ComponentPropsWithoutRef<"div"> {
+  children?: React.ReactNode;
 }

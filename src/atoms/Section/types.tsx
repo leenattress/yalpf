@@ -5,4 +5,11 @@ export interface SectionProps extends React.ComponentPropsWithoutRef<"section"> 
 export interface SectionInnerProps extends React.ComponentPropsWithoutRef<"div"> {
   children?: React.ReactNode;
   fullWidth?: boolean;
+  gap?: string;
+  mobileBreakpoint?: string;
+}
+
+export interface SectionColumnProps extends React.ComponentPropsWithoutRef<"div"> {
+  children?: React.ReactNode;
+  width?: number;
 }

@@ -1,11 +1,7 @@
 import styled from "styled-components";
+import { typographyStyles } from "../../styles/typography";
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 90vh;
-  background-color: #f5f5f5;
-  font-family: sans-serif;
+  width: 100%;
+  ${typographyStyles}
 `;

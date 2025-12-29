@@ -919,20 +919,957 @@ var unitlessKeys = {
   strokeWidth: 1
 };
 
-var f="undefined"!=typeof process&&void 0!==process.env&&(process.env.REACT_APP_SC_ATTR||process.env.SC_ATTR)||"data-styled",m="active",y="data-styled-version",v="6.1.19",g="/*!sc*/\n",S="undefined"!=typeof window&&"undefined"!=typeof document,w=Boolean("boolean"==typeof SC_DISABLE_SPEEDY?SC_DISABLE_SPEEDY:"undefined"!=typeof process&&void 0!==process.env&&void 0!==process.env.REACT_APP_SC_DISABLE_SPEEDY&&""!==process.env.REACT_APP_SC_DISABLE_SPEEDY?"false"!==process.env.REACT_APP_SC_DISABLE_SPEEDY&&process.env.REACT_APP_SC_DISABLE_SPEEDY:"undefined"!=typeof process&&void 0!==process.env&&void 0!==process.env.SC_DISABLE_SPEEDY&&""!==process.env.SC_DISABLE_SPEEDY?"false"!==process.env.SC_DISABLE_SPEEDY&&process.env.SC_DISABLE_SPEEDY:"production"!==process.env.NODE_ENV),E=/invalid hook call/i,N=new Set,P=function(t,n){if("production"!==process.env.NODE_ENV){var o$1=n?' with the id of "'.concat(n,'"'):"",s="The component ".concat(t).concat(o$1," has been created dynamically.\n")+"You may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.\nSee https://styled-components.com/docs/basics#define-styled-components-outside-of-the-render-method for more info.\n",i=console.error;try{var a=!0;console.error=function(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];E.test(t)?(a=!1,N.delete(s)):i.apply(void 0,__spreadArray([t],n,!1));},o.useRef(),a&&!N.has(s)&&(console.warn(s),N.add(s));}catch(e){E.test(e.message)&&N.delete(s);}finally{console.error=i;}}},_=Object.freeze([]),C=Object.freeze({});function I(e,t,n){return void 0===n&&(n=C),e.theme!==n.theme&&e.theme||t||n.theme}var A=new Set(["a","abbr","address","area","article","aside","audio","b","base","bdi","bdo","big","blockquote","body","br","button","canvas","caption","cite","code","col","colgroup","data","datalist","dd","del","details","dfn","dialog","div","dl","dt","em","embed","fieldset","figcaption","figure","footer","form","h1","h2","h3","h4","h5","h6","header","hgroup","hr","html","i","iframe","img","input","ins","kbd","keygen","label","legend","li","link","main","map","mark","menu","menuitem","meta","meter","nav","noscript","object","ol","optgroup","option","output","p","param","picture","pre","progress","q","rp","rt","ruby","s","samp","script","section","select","small","source","span","strong","style","sub","summary","sup","table","tbody","td","textarea","tfoot","th","thead","time","tr","track","u","ul","use","var","video","wbr","circle","clipPath","defs","ellipse","foreignObject","g","image","line","linearGradient","marker","mask","path","pattern","polygon","polyline","radialGradient","rect","stop","svg","text","tspan"]),O=/[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g,D=/(^-|-$)/g;function R(e){return e.replace(O,"-").replace(D,"")}var T=/(a)(d)/gi,k=52,j=function(e){return String.fromCharCode(e+(e>25?39:97))};function x(e){var t,n="";for(t=Math.abs(e);t>k;t=t/k|0)n=j(t%k)+n;return (j(t%k)+n).replace(T,"$1-$2")}var V,F=5381,z=function(e,t){for(var n=t.length;n;)e=33*e^t.charCodeAt(--n);return e},M=function(e){return z(F,e)};function $(e){return x(M(e)>>>0)}function B(e){return "production"!==process.env.NODE_ENV&&"string"==typeof e&&e||e.displayName||e.name||"Component"}function G(e){return "string"==typeof e&&("production"===process.env.NODE_ENV||e.charAt(0)===e.charAt(0).toLowerCase())}var L="function"==typeof Symbol&&Symbol.for,Y=L?Symbol.for("react.memo"):60115,q=L?Symbol.for("react.forward_ref"):60112,W={childContextTypes:true,contextType:true,contextTypes:true,defaultProps:true,displayName:true,getDefaultProps:true,getDerivedStateFromError:true,getDerivedStateFromProps:true,mixins:true,propTypes:true,type:true},H={name:true,length:true,prototype:true,caller:true,callee:true,arguments:true,arity:true},U={$$typeof:true,compare:true,defaultProps:true,displayName:true,propTypes:true,type:true},J=((V={})[q]={$$typeof:true,render:true,defaultProps:true,displayName:true,propTypes:true},V[Y]=U,V);function X(e){return ("type"in(t=e)&&t.type.$$typeof)===Y?U:"$$typeof"in e?J[e.$$typeof]:W;var t;}var Z=Object.defineProperty,K=Object.getOwnPropertyNames,Q=Object.getOwnPropertySymbols,ee=Object.getOwnPropertyDescriptor,te=Object.getPrototypeOf,ne=Object.prototype;function oe(e,t,n){if("string"!=typeof t){if(ne){var o=te(t);o&&o!==ne&&oe(e,o,n);}var r=K(t);Q&&(r=r.concat(Q(t)));for(var s=X(e),i=X(t),a=0;a<r.length;++a){var c=r[a];if(!(c in H||n&&n[c]||i&&c in i||s&&c in s)){var l=ee(t,c);try{Z(e,c,l);}catch(e){}}}}return e}function re(e){return "function"==typeof e}function se(e){return "object"==typeof e&&"styledComponentId"in e}function ie(e,t){return e&&t?"".concat(e," ").concat(t):e||t||""}function ae(e,t){if(0===e.length)return "";for(var n=e[0],o=1;o<e.length;o++)n+=e[o];return n}function ce(e){return null!==e&&"object"==typeof e&&e.constructor.name===Object.name&&!("props"in e&&e.$$typeof)}function le(e,t,n){if(void 0===n&&(n=false),!n&&!ce(e)&&!Array.isArray(e))return t;if(Array.isArray(t))for(var o=0;o<t.length;o++)e[o]=le(e[o],t[o]);else if(ce(t))for(var o in t)e[o]=le(e[o],t[o]);return e}function ue(e,t){Object.defineProperty(e,"toString",{value:t});}var pe="production"!==process.env.NODE_ENV?{1:"Cannot create styled-component for component: %s.\n\n",2:"Can't collect styles once you've consumed a `ServerStyleSheet`'s styles! `ServerStyleSheet` is a one off instance for each server-side render cycle.\n\n- Are you trying to reuse it across renders?\n- Are you accidentally calling collectStyles twice?\n\n",3:"Streaming SSR is only supported in a Node.js environment; Please do not try to call this method in the browser.\n\n",4:"The `StyleSheetManager` expects a valid target or sheet prop!\n\n- Does this error occur on the client and is your target falsy?\n- Does this error occur on the server and is the sheet falsy?\n\n",5:"The clone method cannot be used on the client!\n\n- Are you running in a client-like environment on the server?\n- Are you trying to run SSR on the client?\n\n",6:"Trying to insert a new style tag, but the given Node is unmounted!\n\n- Are you using a custom target that isn't mounted?\n- Does your document not have a valid head element?\n- Have you accidentally removed a style tag manually?\n\n",7:'ThemeProvider: Please return an object from your "theme" prop function, e.g.\n\n```js\ntheme={() => ({})}\n```\n\n',8:'ThemeProvider: Please make your "theme" prop an object.\n\n',9:"Missing document `<head>`\n\n",10:"Cannot find a StyleSheet instance. Usually this happens if there are multiple copies of styled-components loaded at once. Check out this issue for how to troubleshoot and fix the common cases where this situation can happen: https://github.com/styled-components/styled-components/issues/1941#issuecomment-417862021\n\n",11:"_This error was replaced with a dev-time warning, it will be deleted for v4 final._ [createGlobalStyle] received children which will not be rendered. Please use the component without passing children elements.\n\n",12:"It seems you are interpolating a keyframe declaration (%s) into an untagged string. This was supported in styled-components v3, but is not longer supported in v4 as keyframes are now injected on-demand. Please wrap your string in the css\\`\\` helper which ensures the styles are injected correctly. See https://www.styled-components.com/docs/api#css\n\n",13:"%s is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.\n\n",14:'ThemeProvider: "theme" prop is required.\n\n',15:"A stylis plugin has been supplied that is not named. We need a name for each plugin to be able to prevent styling collisions between different stylis configurations within the same app. Before you pass your plugin to `<StyleSheetManager stylisPlugins={[]}>`, please make sure each plugin is uniquely-named, e.g.\n\n```js\nObject.defineProperty(importedPlugin, 'name', { value: 'some-unique-name' });\n```\n\n",16:"Reached the limit of how many styled components may be created at group %s.\nYou may only create up to 1,073,741,824 components. If you're creating components dynamically,\nas for instance in your render method then you may be running into this limitation.\n\n",17:"CSSStyleSheet could not be found on HTMLStyleElement.\nHas styled-components' style tag been unmounted or altered by another script?\n",18:"ThemeProvider: Please make sure your useTheme hook is within a `<ThemeProvider>`"}:{};function de(){for(var e=[],t=0;t<arguments.length;t++)e[t]=arguments[t];for(var n=e[0],o=[],r=1,s=e.length;r<s;r+=1)o.push(e[r]);return o.forEach(function(e){n=n.replace(/%[a-z]/,e);}),n}function he(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];return "production"===process.env.NODE_ENV?new Error("An error occurred. See https://github.com/styled-components/styled-components/blob/main/packages/styled-components/src/utils/errors.md#".concat(t," for more information.").concat(n.length>0?" Args: ".concat(n.join(", ")):"")):new Error(de.apply(void 0,__spreadArray([pe[t]],n,false)).trim())}var fe=function(){function e(e){this.groupSizes=new Uint32Array(512),this.length=512,this.tag=e;}return e.prototype.indexOfGroup=function(e){for(var t=0,n=0;n<e;n++)t+=this.groupSizes[n];return t},e.prototype.insertRules=function(e,t){if(e>=this.groupSizes.length){for(var n=this.groupSizes,o=n.length,r=o;e>=r;)if((r<<=1)<0)throw he(16,"".concat(e));this.groupSizes=new Uint32Array(r),this.groupSizes.set(n),this.length=r;for(var s=o;s<r;s++)this.groupSizes[s]=0;}for(var i=this.indexOfGroup(e+1),a=(s=0,t.length);s<a;s++)this.tag.insertRule(i,t[s])&&(this.groupSizes[e]++,i++);},e.prototype.clearGroup=function(e){if(e<this.length){var t=this.groupSizes[e],n=this.indexOfGroup(e),o=n+t;this.groupSizes[e]=0;for(var r=n;r<o;r++)this.tag.deleteRule(n);}},e.prototype.getGroup=function(e){var t="";if(e>=this.length||0===this.groupSizes[e])return t;for(var n=this.groupSizes[e],o=this.indexOfGroup(e),r=o+n,s=o;s<r;s++)t+="".concat(this.tag.getRule(s)).concat(g);return t},e}(),me=1<<30,ye=new Map,ve=new Map,ge=1,Se=function(e){if(ye.has(e))return ye.get(e);for(;ve.has(ge);)ge++;var t=ge++;if("production"!==process.env.NODE_ENV&&((0|t)<0||t>me))throw he(16,"".concat(t));return ye.set(e,t),ve.set(t,e),t},we=function(e,t){ge=t+1,ye.set(e,t),ve.set(t,e);},be="style[".concat(f,"][").concat(y,'="').concat(v,'"]'),Ee=new RegExp("^".concat(f,'\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)')),Ne=function(e,t,n){for(var o,r=n.split(","),s=0,i=r.length;s<i;s++)(o=r[s])&&e.registerName(t,o);},Pe=function(e,t){for(var n,o=(null!==(n=t.textContent)&&void 0!==n?n:"").split(g),r=[],s=0,i=o.length;s<i;s++){var a=o[s].trim();if(a){var c=a.match(Ee);if(c){var l=0|parseInt(c[1],10),u=c[2];0!==l&&(we(u,l),Ne(e,u,c[3]),e.getTag().insertRules(l,r)),r.length=0;}else r.push(a);}}},_e=function(e){for(var t=document.querySelectorAll(be),n=0,o=t.length;n<o;n++){var r=t[n];r&&r.getAttribute(f)!==m&&(Pe(e,r),r.parentNode&&r.parentNode.removeChild(r));}};function Ce(){return "undefined"!=typeof __webpack_nonce__?__webpack_nonce__:null}var Ie=function(e){var t=document.head,n=e||t,o=document.createElement("style"),r=function(e){var t=Array.from(e.querySelectorAll("style[".concat(f,"]")));return t[t.length-1]}(n),s=void 0!==r?r.nextSibling:null;o.setAttribute(f,m),o.setAttribute(y,v);var i=Ce();return i&&o.setAttribute("nonce",i),n.insertBefore(o,s),o},Ae=function(){function e(e){this.element=Ie(e),this.element.appendChild(document.createTextNode("")),this.sheet=function(e){if(e.sheet)return e.sheet;for(var t=document.styleSheets,n=0,o=t.length;n<o;n++){var r=t[n];if(r.ownerNode===e)return r}throw he(17)}(this.element),this.length=0;}return e.prototype.insertRule=function(e,t){try{return this.sheet.insertRule(t,e),this.length++,!0}catch(e){return  false}},e.prototype.deleteRule=function(e){this.sheet.deleteRule(e),this.length--;},e.prototype.getRule=function(e){var t=this.sheet.cssRules[e];return t&&t.cssText?t.cssText:""},e}(),Oe=function(){function e(e){this.element=Ie(e),this.nodes=this.element.childNodes,this.length=0;}return e.prototype.insertRule=function(e,t){if(e<=this.length&&e>=0){var n=document.createTextNode(t);return this.element.insertBefore(n,this.nodes[e]||null),this.length++,true}return  false},e.prototype.deleteRule=function(e){this.element.removeChild(this.nodes[e]),this.length--;},e.prototype.getRule=function(e){return e<this.length?this.nodes[e].textContent:""},e}(),De=function(){function e(e){this.rules=[],this.length=0;}return e.prototype.insertRule=function(e,t){return e<=this.length&&(this.rules.splice(e,0,t),this.length++,true)},e.prototype.deleteRule=function(e){this.rules.splice(e,1),this.length--;},e.prototype.getRule=function(e){return e<this.length?this.rules[e]:""},e}(),Re=S,Te={isServer:!S,useCSSOMInjection:!w},ke=function(){function e(e,n,o){ void 0===e&&(e=C),void 0===n&&(n={});var r=this;this.options=__assign(__assign({},Te),e),this.gs=n,this.names=new Map(o),this.server=!!e.isServer,!this.server&&S&&Re&&(Re=false,_e(this)),ue(this,function(){return function(e){for(var t=e.getTag(),n=t.length,o="",r=function(n){var r=function(e){return ve.get(e)}(n);if(void 0===r)return "continue";var s=e.names.get(r),i=t.getGroup(n);if(void 0===s||!s.size||0===i.length)return "continue";var a="".concat(f,".g").concat(n,'[id="').concat(r,'"]'),c="";void 0!==s&&s.forEach(function(e){e.length>0&&(c+="".concat(e,","));}),o+="".concat(i).concat(a,'{content:"').concat(c,'"}').concat(g);},s=0;s<n;s++)r(s);return o}(r)});}return e.registerId=function(e){return Se(e)},e.prototype.rehydrate=function(){!this.server&&S&&_e(this);},e.prototype.reconstructWithOptions=function(n,o){return void 0===o&&(o=true),new e(__assign(__assign({},this.options),n),this.gs,o&&this.names||void 0)},e.prototype.allocateGSInstance=function(e){return this.gs[e]=(this.gs[e]||0)+1},e.prototype.getTag=function(){return this.tag||(this.tag=(e=function(e){var t=e.useCSSOMInjection,n=e.target;return e.isServer?new De(n):t?new Ae(n):new Oe(n)}(this.options),new fe(e)));var e;},e.prototype.hasNameForId=function(e,t){return this.names.has(e)&&this.names.get(e).has(t)},e.prototype.registerName=function(e,t){if(Se(e),this.names.has(e))this.names.get(e).add(t);else {var n=new Set;n.add(t),this.names.set(e,n);}},e.prototype.insertRules=function(e,t,n){this.registerName(e,t),this.getTag().insertRules(Se(e),n);},e.prototype.clearNames=function(e){this.names.has(e)&&this.names.get(e).clear();},e.prototype.clearRules=function(e){this.getTag().clearGroup(Se(e)),this.clearNames(e);},e.prototype.clearTag=function(){this.tag=void 0;},e}(),je=/&/g,xe=/^\s*\/\/.*$/gm;function Ve(e,t){return e.map(function(e){return "rule"===e.type&&(e.value="".concat(t," ").concat(e.value),e.value=e.value.replaceAll(",",",".concat(t," ")),e.props=e.props.map(function(e){return "".concat(t," ").concat(e)})),Array.isArray(e.children)&&"@keyframes"!==e.type&&(e.children=Ve(e.children,t)),e})}function Fe(e){var t,n,o,r=C,s=r.options,i=void 0===s?C:s,a=r.plugins,c=void 0===a?_:a,l=function(e,o,r){return r.startsWith(n)&&r.endsWith(n)&&r.replaceAll(n,"").length>0?".".concat(t):e},u=c.slice();u.push(function(e){e.type===RULESET&&e.value.includes("&")&&(e.props[0]=e.props[0].replace(je,n).replace(o,l));}),i.prefix&&u.push(prefixer),u.push(stringify);var p=function(e,r,s,a){ void 0===r&&(r=""),void 0===s&&(s=""),void 0===a&&(a="&"),t=a,n=r,o=new RegExp("\\".concat(n,"\\b"),"g");var c=e.replace(xe,""),l=compile(s||r?"".concat(s," ").concat(r," { ").concat(c," }"):c);i.namespace&&(l=Ve(l,i.namespace));var p=[];return serialize(l,middleware(u.concat(rulesheet(function(e){return p.push(e)})))),p};return p.hash=c.length?c.reduce(function(e,t){return t.name||he(15),z(e,t.name)},F).toString():"",p}var ze=new ke,Me=Fe(),$e=o.createContext({shouldForwardProp:void 0,styleSheet:ze,stylis:Me});$e.Consumer;o.createContext(void 0);function Le(){return o.useContext($e)}var qe=function(){function e(e,t){var n=this;this.inject=function(e,t){ void 0===t&&(t=Me);var o=n.name+t.hash;e.hasNameForId(n.id,o)||e.insertRules(n.id,o,t(n.rules,o,"@keyframes"));},this.name=e,this.id="sc-keyframes-".concat(e),this.rules=t,ue(this,function(){throw he(12,String(n.name))});}return e.prototype.getName=function(e){return void 0===e&&(e=Me),this.name+e.hash},e}(),We=function(e){return e>="A"&&e<="Z"};function He(e){for(var t="",n=0;n<e.length;n++){var o=e[n];if(1===n&&"-"===o&&"-"===e[0])return e;We(o)?t+="-"+o.toLowerCase():t+=o;}return t.startsWith("ms-")?"-"+t:t}var Ue=function(e){return null==e||false===e||""===e},Je=function(t){var n,o,r=[];for(var s in t){var i=t[s];t.hasOwnProperty(s)&&!Ue(i)&&(Array.isArray(i)&&i.isCss||re(i)?r.push("".concat(He(s),":"),i,";"):ce(i)?r.push.apply(r,__spreadArray(__spreadArray(["".concat(s," {")],Je(i),false),["}"],false)):r.push("".concat(He(s),": ").concat((n=s,null==(o=i)||"boolean"==typeof o||""===o?"":"number"!=typeof o||0===o||n in unitlessKeys||n.startsWith("--")?String(o).trim():"".concat(o,"px")),";")));}return r};function Xe(e,t,n,o){if(Ue(e))return [];if(se(e))return [".".concat(e.styledComponentId)];if(re(e)){if(!re(s=e)||s.prototype&&s.prototype.isReactComponent||!t)return [e];var r=e(t);return "production"===process.env.NODE_ENV||"object"!=typeof r||Array.isArray(r)||r instanceof qe||ce(r)||null===r||console.error("".concat(B(e)," is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.")),Xe(r,t,n,o)}var s;return e instanceof qe?n?(e.inject(n,o),[e.getName(o)]):[e]:ce(e)?Je(e):Array.isArray(e)?Array.prototype.concat.apply(_,e.map(function(e){return Xe(e,t,n,o)})):[e.toString()]}function Ze(e){for(var t=0;t<e.length;t+=1){var n=e[t];if(re(n)&&!se(n))return  false}return  true}var Ke=M(v),Qe=function(){function e(e,t,n){this.rules=e,this.staticRulesId="",this.isStatic="production"===process.env.NODE_ENV&&(void 0===n||n.isStatic)&&Ze(e),this.componentId=t,this.baseHash=z(Ke,t),this.baseStyle=n,ke.registerId(t);}return e.prototype.generateAndInjectStyles=function(e,t,n){var o=this.baseStyle?this.baseStyle.generateAndInjectStyles(e,t,n):"";if(this.isStatic&&!n.hash)if(this.staticRulesId&&t.hasNameForId(this.componentId,this.staticRulesId))o=ie(o,this.staticRulesId);else {var r=ae(Xe(this.rules,e,t,n)),s=x(z(this.baseHash,r)>>>0);if(!t.hasNameForId(this.componentId,s)){var i=n(r,".".concat(s),void 0,this.componentId);t.insertRules(this.componentId,s,i);}o=ie(o,s),this.staticRulesId=s;}else {for(var a=z(this.baseHash,n.hash),c="",l=0;l<this.rules.length;l++){var u=this.rules[l];if("string"==typeof u)c+=u,"production"!==process.env.NODE_ENV&&(a=z(a,u));else if(u){var p=ae(Xe(u,e,t,n));a=z(a,p+l),c+=p;}}if(c){var d=x(a>>>0);t.hasNameForId(this.componentId,d)||t.insertRules(this.componentId,d,n(c,".".concat(d),void 0,this.componentId)),o=ie(o,d);}}return o},e}(),et=o.createContext(void 0);et.Consumer;var rt={},st=new Set;function it(e,r,s){var i=se(e),a=e,c=!G(e),p=r.attrs,d=void 0===p?_:p,h=r.componentId,f=void 0===h?function(e,t){var n="string"!=typeof e?"sc":R(e);rt[n]=(rt[n]||0)+1;var o="".concat(n,"-").concat($(v+n+rt[n]));return t?"".concat(t,"-").concat(o):o}(r.displayName,r.parentComponentId):h,m=r.displayName,y=void 0===m?function(e){return G(e)?"styled.".concat(e):"Styled(".concat(B(e),")")}(e):m,g=r.displayName&&r.componentId?"".concat(R(r.displayName),"-").concat(r.componentId):r.componentId||f,S=i&&a.attrs?a.attrs.concat(d).filter(Boolean):d,w=r.shouldForwardProp;if(i&&a.shouldForwardProp){var b=a.shouldForwardProp;if(r.shouldForwardProp){var E=r.shouldForwardProp;w=function(e,t){return b(e,t)&&E(e,t)};}else w=b;}var N=new Qe(s,g,i?a.componentStyle:void 0);function O(e,r){return function(e,r,s){var i=e.attrs,a=e.componentStyle,c=e.defaultProps,p=e.foldedComponentIds,d=e.styledComponentId,h=e.target,f=o.useContext(et),m=Le(),y=e.shouldForwardProp||m.shouldForwardProp;"production"!==process.env.NODE_ENV&&o.useDebugValue(d);var v=I(r,f,c)||C,g=function(e,n,o){for(var r,s=__assign(__assign({},n),{className:void 0,theme:o}),i=0;i<e.length;i+=1){var a=re(r=e[i])?r(s):r;for(var c in a)s[c]="className"===c?ie(s[c],a[c]):"style"===c?__assign(__assign({},s[c]),a[c]):a[c];}return n.className&&(s.className=ie(s.className,n.className)),s}(i,r,v),S=g.as||h,w={};for(var b in g) void 0===g[b]||"$"===b[0]||"as"===b||"theme"===b&&g.theme===v||("forwardedAs"===b?w.as=g.forwardedAs:y&&!y(b,S)||(w[b]=g[b],y||"development"!==process.env.NODE_ENV||isPropValid(b)||st.has(b)||!A.has(S)||(st.add(b),console.warn('styled-components: it looks like an unknown prop "'.concat(b,'" is being sent through to the DOM, which will likely trigger a React console error. If you would like automatic filtering of unknown props, you can opt-into that behavior via `<StyleSheetManager shouldForwardProp={...}>` (connect an API like `@emotion/is-prop-valid`) or consider using transient props (`$` prefix for automatic filtering.)')))));var E=function(e,t){var n=Le(),o$1=e.generateAndInjectStyles(t,n.styleSheet,n.stylis);return "production"!==process.env.NODE_ENV&&o.useDebugValue(o$1),o$1}(a,g);"production"!==process.env.NODE_ENV&&e.warnTooManyClasses&&e.warnTooManyClasses(E);var N=ie(p,d);return E&&(N+=" "+E),g.className&&(N+=" "+g.className),w[G(S)&&!A.has(S)?"class":"className"]=N,s&&(w.ref=s),o.createElement(S,w)}(D,e,r)}O.displayName=y;var D=o.forwardRef(O);return D.attrs=S,D.componentStyle=N,D.displayName=y,D.shouldForwardProp=w,D.foldedComponentIds=i?ie(a.foldedComponentIds,a.styledComponentId):"",D.styledComponentId=g,D.target=i?a.target:e,Object.defineProperty(D,"defaultProps",{get:function(){return this._foldedDefaultProps},set:function(e){this._foldedDefaultProps=i?function(e){for(var t=[],n=1;n<arguments.length;n++)t[n-1]=arguments[n];for(var o=0,r=t;o<r.length;o++)le(e,r[o],true);return e}({},a.defaultProps,e):e;}}),"production"!==process.env.NODE_ENV&&(P(y,g),D.warnTooManyClasses=function(e,t){var n={},o=false;return function(r){if(!o&&(n[r]=true,Object.keys(n).length>=200)){var s=t?' with the id of "'.concat(t,'"'):"";console.warn("Over ".concat(200," classes were generated for component ").concat(e).concat(s,".\n")+"Consider using the attrs method, together with a style object for frequently changed styles.\nExample:\n  const Component = styled.div.attrs(props => ({\n    style: {\n      background: props.background,\n    },\n  }))`width: 100%;`\n\n  <Component />"),o=true,n={};}}}(y,g)),ue(D,function(){return ".".concat(D.styledComponentId)}),c&&oe(D,e,{attrs:true,componentStyle:true,displayName:true,foldedComponentIds:true,shouldForwardProp:true,styledComponentId:true,target:true}),D}function at(e,t){for(var n=[e[0]],o=0,r=t.length;o<r;o+=1)n.push(t[o],e[o+1]);return n}var ct=function(e){return Object.assign(e,{isCss:true})};function lt(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];if(re(t)||ce(t))return ct(Xe(at(_,__spreadArray([t],n,true))));var r=t;return 0===n.length&&1===r.length&&"string"==typeof r[0]?Xe(r):ct(Xe(at(r,n)))}function ut(n,o,r){if(void 0===r&&(r=C),!o)throw he(1,o);var s=function(t){for(var s=[],i=1;i<arguments.length;i++)s[i-1]=arguments[i];return n(o,r,lt.apply(void 0,__spreadArray([t],s,false)))};return s.attrs=function(e){return ut(n,o,__assign(__assign({},r),{attrs:Array.prototype.concat(r.attrs,e).filter(Boolean)}))},s.withConfig=function(e){return ut(n,o,__assign(__assign({},r),e))},s}var pt=function(e){return ut(it,e)},dt=pt;A.forEach(function(e){dt[e]=pt(e);});"production"!==process.env.NODE_ENV&&"undefined"!=typeof navigator&&"ReactNative"===navigator.product&&console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native");var wt="__sc-".concat(f,"__");"production"!==process.env.NODE_ENV&&"test"!==process.env.NODE_ENV&&"undefined"!=typeof window&&(window[wt]||(window[wt]=0),1===window[wt]&&console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."),window[wt]+=1);
+var f="undefined"!=typeof process&&void 0!==process.env&&(process.env.REACT_APP_SC_ATTR||process.env.SC_ATTR)||"data-styled",m="active",y="data-styled-version",v="6.1.19",g="/*!sc*/\n",S="undefined"!=typeof window&&"undefined"!=typeof document,w=Boolean("boolean"==typeof SC_DISABLE_SPEEDY?SC_DISABLE_SPEEDY:"undefined"!=typeof process&&void 0!==process.env&&void 0!==process.env.REACT_APP_SC_DISABLE_SPEEDY&&""!==process.env.REACT_APP_SC_DISABLE_SPEEDY?"false"!==process.env.REACT_APP_SC_DISABLE_SPEEDY&&process.env.REACT_APP_SC_DISABLE_SPEEDY:"undefined"!=typeof process&&void 0!==process.env&&void 0!==process.env.SC_DISABLE_SPEEDY&&""!==process.env.SC_DISABLE_SPEEDY?"false"!==process.env.SC_DISABLE_SPEEDY&&process.env.SC_DISABLE_SPEEDY:"production"!==process.env.NODE_ENV),E=/invalid hook call/i,N=new Set,P=function(t,n){if("production"!==process.env.NODE_ENV){var o$1=n?' with the id of "'.concat(n,'"'):"",s="The component ".concat(t).concat(o$1," has been created dynamically.\n")+"You may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.\nSee https://styled-components.com/docs/basics#define-styled-components-outside-of-the-render-method for more info.\n",i=console.error;try{var a=!0;console.error=function(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];E.test(t)?(a=!1,N.delete(s)):i.apply(void 0,__spreadArray([t],n,!1));},o.useRef(),a&&!N.has(s)&&(console.warn(s),N.add(s));}catch(e){E.test(e.message)&&N.delete(s);}finally{console.error=i;}}},_=Object.freeze([]),C=Object.freeze({});function I(e,t,n){return void 0===n&&(n=C),e.theme!==n.theme&&e.theme||t||n.theme}var A=new Set(["a","abbr","address","area","article","aside","audio","b","base","bdi","bdo","big","blockquote","body","br","button","canvas","caption","cite","code","col","colgroup","data","datalist","dd","del","details","dfn","dialog","div","dl","dt","em","embed","fieldset","figcaption","figure","footer","form","h1","h2","h3","h4","h5","h6","header","hgroup","hr","html","i","iframe","img","input","ins","kbd","keygen","label","legend","li","link","main","map","mark","menu","menuitem","meta","meter","nav","noscript","object","ol","optgroup","option","output","p","param","picture","pre","progress","q","rp","rt","ruby","s","samp","script","section","select","small","source","span","strong","style","sub","summary","sup","table","tbody","td","textarea","tfoot","th","thead","time","tr","track","u","ul","use","var","video","wbr","circle","clipPath","defs","ellipse","foreignObject","g","image","line","linearGradient","marker","mask","path","pattern","polygon","polyline","radialGradient","rect","stop","svg","text","tspan"]),O=/[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g,D=/(^-|-$)/g;function R(e){return e.replace(O,"-").replace(D,"")}var T=/(a)(d)/gi,k=52,j=function(e){return String.fromCharCode(e+(e>25?39:97))};function x(e){var t,n="";for(t=Math.abs(e);t>k;t=t/k|0)n=j(t%k)+n;return (j(t%k)+n).replace(T,"$1-$2")}var V,F=5381,z=function(e,t){for(var n=t.length;n;)e=33*e^t.charCodeAt(--n);return e},M=function(e){return z(F,e)};function $(e){return x(M(e)>>>0)}function B(e){return "production"!==process.env.NODE_ENV&&"string"==typeof e&&e||e.displayName||e.name||"Component"}function G(e){return "string"==typeof e&&("production"===process.env.NODE_ENV||e.charAt(0)===e.charAt(0).toLowerCase())}var L="function"==typeof Symbol&&Symbol.for,Y=L?Symbol.for("react.memo"):60115,q=L?Symbol.for("react.forward_ref"):60112,W={childContextTypes:true,contextType:true,contextTypes:true,defaultProps:true,displayName:true,getDefaultProps:true,getDerivedStateFromError:true,getDerivedStateFromProps:true,mixins:true,propTypes:true,type:true},H={name:true,length:true,prototype:true,caller:true,callee:true,arguments:true,arity:true},U={$$typeof:true,compare:true,defaultProps:true,displayName:true,propTypes:true,type:true},J=((V={})[q]={$$typeof:true,render:true,defaultProps:true,displayName:true,propTypes:true},V[Y]=U,V);function X(e){return ("type"in(t=e)&&t.type.$$typeof)===Y?U:"$$typeof"in e?J[e.$$typeof]:W;var t;}var Z=Object.defineProperty,K=Object.getOwnPropertyNames,Q=Object.getOwnPropertySymbols,ee=Object.getOwnPropertyDescriptor,te=Object.getPrototypeOf,ne=Object.prototype;function oe(e,t,n){if("string"!=typeof t){if(ne){var o=te(t);o&&o!==ne&&oe(e,o,n);}var r=K(t);Q&&(r=r.concat(Q(t)));for(var s=X(e),i=X(t),a=0;a<r.length;++a){var c=r[a];if(!(c in H||n&&n[c]||i&&c in i||s&&c in s)){var l=ee(t,c);try{Z(e,c,l);}catch(e){}}}}return e}function re(e){return "function"==typeof e}function se(e){return "object"==typeof e&&"styledComponentId"in e}function ie(e,t){return e&&t?"".concat(e," ").concat(t):e||t||""}function ae(e,t){if(0===e.length)return "";for(var n=e[0],o=1;o<e.length;o++)n+=e[o];return n}function ce(e){return null!==e&&"object"==typeof e&&e.constructor.name===Object.name&&!("props"in e&&e.$$typeof)}function le(e,t,n){if(void 0===n&&(n=false),!n&&!ce(e)&&!Array.isArray(e))return t;if(Array.isArray(t))for(var o=0;o<t.length;o++)e[o]=le(e[o],t[o]);else if(ce(t))for(var o in t)e[o]=le(e[o],t[o]);return e}function ue(e,t){Object.defineProperty(e,"toString",{value:t});}var pe="production"!==process.env.NODE_ENV?{1:"Cannot create styled-component for component: %s.\n\n",2:"Can't collect styles once you've consumed a `ServerStyleSheet`'s styles! `ServerStyleSheet` is a one off instance for each server-side render cycle.\n\n- Are you trying to reuse it across renders?\n- Are you accidentally calling collectStyles twice?\n\n",3:"Streaming SSR is only supported in a Node.js environment; Please do not try to call this method in the browser.\n\n",4:"The `StyleSheetManager` expects a valid target or sheet prop!\n\n- Does this error occur on the client and is your target falsy?\n- Does this error occur on the server and is the sheet falsy?\n\n",5:"The clone method cannot be used on the client!\n\n- Are you running in a client-like environment on the server?\n- Are you trying to run SSR on the client?\n\n",6:"Trying to insert a new style tag, but the given Node is unmounted!\n\n- Are you using a custom target that isn't mounted?\n- Does your document not have a valid head element?\n- Have you accidentally removed a style tag manually?\n\n",7:'ThemeProvider: Please return an object from your "theme" prop function, e.g.\n\n```js\ntheme={() => ({})}\n```\n\n',8:'ThemeProvider: Please make your "theme" prop an object.\n\n',9:"Missing document `<head>`\n\n",10:"Cannot find a StyleSheet instance. Usually this happens if there are multiple copies of styled-components loaded at once. Check out this issue for how to troubleshoot and fix the common cases where this situation can happen: https://github.com/styled-components/styled-components/issues/1941#issuecomment-417862021\n\n",11:"_This error was replaced with a dev-time warning, it will be deleted for v4 final._ [createGlobalStyle] received children which will not be rendered. Please use the component without passing children elements.\n\n",12:"It seems you are interpolating a keyframe declaration (%s) into an untagged string. This was supported in styled-components v3, but is not longer supported in v4 as keyframes are now injected on-demand. Please wrap your string in the css\\`\\` helper which ensures the styles are injected correctly. See https://www.styled-components.com/docs/api#css\n\n",13:"%s is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.\n\n",14:'ThemeProvider: "theme" prop is required.\n\n',15:"A stylis plugin has been supplied that is not named. We need a name for each plugin to be able to prevent styling collisions between different stylis configurations within the same app. Before you pass your plugin to `<StyleSheetManager stylisPlugins={[]}>`, please make sure each plugin is uniquely-named, e.g.\n\n```js\nObject.defineProperty(importedPlugin, 'name', { value: 'some-unique-name' });\n```\n\n",16:"Reached the limit of how many styled components may be created at group %s.\nYou may only create up to 1,073,741,824 components. If you're creating components dynamically,\nas for instance in your render method then you may be running into this limitation.\n\n",17:"CSSStyleSheet could not be found on HTMLStyleElement.\nHas styled-components' style tag been unmounted or altered by another script?\n",18:"ThemeProvider: Please make sure your useTheme hook is within a `<ThemeProvider>`"}:{};function de(){for(var e=[],t=0;t<arguments.length;t++)e[t]=arguments[t];for(var n=e[0],o=[],r=1,s=e.length;r<s;r+=1)o.push(e[r]);return o.forEach(function(e){n=n.replace(/%[a-z]/,e);}),n}function he(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];return "production"===process.env.NODE_ENV?new Error("An error occurred. See https://github.com/styled-components/styled-components/blob/main/packages/styled-components/src/utils/errors.md#".concat(t," for more information.").concat(n.length>0?" Args: ".concat(n.join(", ")):"")):new Error(de.apply(void 0,__spreadArray([pe[t]],n,false)).trim())}var fe=function(){function e(e){this.groupSizes=new Uint32Array(512),this.length=512,this.tag=e;}return e.prototype.indexOfGroup=function(e){for(var t=0,n=0;n<e;n++)t+=this.groupSizes[n];return t},e.prototype.insertRules=function(e,t){if(e>=this.groupSizes.length){for(var n=this.groupSizes,o=n.length,r=o;e>=r;)if((r<<=1)<0)throw he(16,"".concat(e));this.groupSizes=new Uint32Array(r),this.groupSizes.set(n),this.length=r;for(var s=o;s<r;s++)this.groupSizes[s]=0;}for(var i=this.indexOfGroup(e+1),a=(s=0,t.length);s<a;s++)this.tag.insertRule(i,t[s])&&(this.groupSizes[e]++,i++);},e.prototype.clearGroup=function(e){if(e<this.length){var t=this.groupSizes[e],n=this.indexOfGroup(e),o=n+t;this.groupSizes[e]=0;for(var r=n;r<o;r++)this.tag.deleteRule(n);}},e.prototype.getGroup=function(e){var t="";if(e>=this.length||0===this.groupSizes[e])return t;for(var n=this.groupSizes[e],o=this.indexOfGroup(e),r=o+n,s=o;s<r;s++)t+="".concat(this.tag.getRule(s)).concat(g);return t},e}(),me=1<<30,ye=new Map,ve=new Map,ge=1,Se=function(e){if(ye.has(e))return ye.get(e);for(;ve.has(ge);)ge++;var t=ge++;if("production"!==process.env.NODE_ENV&&((0|t)<0||t>me))throw he(16,"".concat(t));return ye.set(e,t),ve.set(t,e),t},we=function(e,t){ge=t+1,ye.set(e,t),ve.set(t,e);},be="style[".concat(f,"][").concat(y,'="').concat(v,'"]'),Ee=new RegExp("^".concat(f,'\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)')),Ne=function(e,t,n){for(var o,r=n.split(","),s=0,i=r.length;s<i;s++)(o=r[s])&&e.registerName(t,o);},Pe=function(e,t){for(var n,o=(null!==(n=t.textContent)&&void 0!==n?n:"").split(g),r=[],s=0,i=o.length;s<i;s++){var a=o[s].trim();if(a){var c=a.match(Ee);if(c){var l=0|parseInt(c[1],10),u=c[2];0!==l&&(we(u,l),Ne(e,u,c[3]),e.getTag().insertRules(l,r)),r.length=0;}else r.push(a);}}},_e=function(e){for(var t=document.querySelectorAll(be),n=0,o=t.length;n<o;n++){var r=t[n];r&&r.getAttribute(f)!==m&&(Pe(e,r),r.parentNode&&r.parentNode.removeChild(r));}};function Ce(){return "undefined"!=typeof __webpack_nonce__?__webpack_nonce__:null}var Ie=function(e){var t=document.head,n=e||t,o=document.createElement("style"),r=function(e){var t=Array.from(e.querySelectorAll("style[".concat(f,"]")));return t[t.length-1]}(n),s=void 0!==r?r.nextSibling:null;o.setAttribute(f,m),o.setAttribute(y,v);var i=Ce();return i&&o.setAttribute("nonce",i),n.insertBefore(o,s),o},Ae=function(){function e(e){this.element=Ie(e),this.element.appendChild(document.createTextNode("")),this.sheet=function(e){if(e.sheet)return e.sheet;for(var t=document.styleSheets,n=0,o=t.length;n<o;n++){var r=t[n];if(r.ownerNode===e)return r}throw he(17)}(this.element),this.length=0;}return e.prototype.insertRule=function(e,t){try{return this.sheet.insertRule(t,e),this.length++,!0}catch(e){return  false}},e.prototype.deleteRule=function(e){this.sheet.deleteRule(e),this.length--;},e.prototype.getRule=function(e){var t=this.sheet.cssRules[e];return t&&t.cssText?t.cssText:""},e}(),Oe=function(){function e(e){this.element=Ie(e),this.nodes=this.element.childNodes,this.length=0;}return e.prototype.insertRule=function(e,t){if(e<=this.length&&e>=0){var n=document.createTextNode(t);return this.element.insertBefore(n,this.nodes[e]||null),this.length++,true}return  false},e.prototype.deleteRule=function(e){this.element.removeChild(this.nodes[e]),this.length--;},e.prototype.getRule=function(e){return e<this.length?this.nodes[e].textContent:""},e}(),De=function(){function e(e){this.rules=[],this.length=0;}return e.prototype.insertRule=function(e,t){return e<=this.length&&(this.rules.splice(e,0,t),this.length++,true)},e.prototype.deleteRule=function(e){this.rules.splice(e,1),this.length--;},e.prototype.getRule=function(e){return e<this.length?this.rules[e]:""},e}(),Re=S,Te={isServer:!S,useCSSOMInjection:!w},ke=function(){function e(e,n,o){ void 0===e&&(e=C),void 0===n&&(n={});var r=this;this.options=__assign(__assign({},Te),e),this.gs=n,this.names=new Map(o),this.server=!!e.isServer,!this.server&&S&&Re&&(Re=false,_e(this)),ue(this,function(){return function(e){for(var t=e.getTag(),n=t.length,o="",r=function(n){var r=function(e){return ve.get(e)}(n);if(void 0===r)return "continue";var s=e.names.get(r),i=t.getGroup(n);if(void 0===s||!s.size||0===i.length)return "continue";var a="".concat(f,".g").concat(n,'[id="').concat(r,'"]'),c="";void 0!==s&&s.forEach(function(e){e.length>0&&(c+="".concat(e,","));}),o+="".concat(i).concat(a,'{content:"').concat(c,'"}').concat(g);},s=0;s<n;s++)r(s);return o}(r)});}return e.registerId=function(e){return Se(e)},e.prototype.rehydrate=function(){!this.server&&S&&_e(this);},e.prototype.reconstructWithOptions=function(n,o){return void 0===o&&(o=true),new e(__assign(__assign({},this.options),n),this.gs,o&&this.names||void 0)},e.prototype.allocateGSInstance=function(e){return this.gs[e]=(this.gs[e]||0)+1},e.prototype.getTag=function(){return this.tag||(this.tag=(e=function(e){var t=e.useCSSOMInjection,n=e.target;return e.isServer?new De(n):t?new Ae(n):new Oe(n)}(this.options),new fe(e)));var e;},e.prototype.hasNameForId=function(e,t){return this.names.has(e)&&this.names.get(e).has(t)},e.prototype.registerName=function(e,t){if(Se(e),this.names.has(e))this.names.get(e).add(t);else {var n=new Set;n.add(t),this.names.set(e,n);}},e.prototype.insertRules=function(e,t,n){this.registerName(e,t),this.getTag().insertRules(Se(e),n);},e.prototype.clearNames=function(e){this.names.has(e)&&this.names.get(e).clear();},e.prototype.clearRules=function(e){this.getTag().clearGroup(Se(e)),this.clearNames(e);},e.prototype.clearTag=function(){this.tag=void 0;},e}(),je=/&/g,xe=/^\s*\/\/.*$/gm;function Ve(e,t){return e.map(function(e){return "rule"===e.type&&(e.value="".concat(t," ").concat(e.value),e.value=e.value.replaceAll(",",",".concat(t," ")),e.props=e.props.map(function(e){return "".concat(t," ").concat(e)})),Array.isArray(e.children)&&"@keyframes"!==e.type&&(e.children=Ve(e.children,t)),e})}function Fe(e){var t,n,o,r=C,s=r.options,i=void 0===s?C:s,a=r.plugins,c=void 0===a?_:a,l=function(e,o,r){return r.startsWith(n)&&r.endsWith(n)&&r.replaceAll(n,"").length>0?".".concat(t):e},u=c.slice();u.push(function(e){e.type===RULESET&&e.value.includes("&")&&(e.props[0]=e.props[0].replace(je,n).replace(o,l));}),i.prefix&&u.push(prefixer),u.push(stringify);var p=function(e,r,s,a){ void 0===r&&(r=""),void 0===s&&(s=""),void 0===a&&(a="&"),t=a,n=r,o=new RegExp("\\".concat(n,"\\b"),"g");var c=e.replace(xe,""),l=compile(s||r?"".concat(s," ").concat(r," { ").concat(c," }"):c);i.namespace&&(l=Ve(l,i.namespace));var p=[];return serialize(l,middleware(u.concat(rulesheet(function(e){return p.push(e)})))),p};return p.hash=c.length?c.reduce(function(e,t){return t.name||he(15),z(e,t.name)},F).toString():"",p}var ze=new ke,Me=Fe(),$e=o.createContext({shouldForwardProp:void 0,styleSheet:ze,stylis:Me});$e.Consumer;o.createContext(void 0);function Le(){return o.useContext($e)}var qe=function(){function e(e,t){var n=this;this.inject=function(e,t){ void 0===t&&(t=Me);var o=n.name+t.hash;e.hasNameForId(n.id,o)||e.insertRules(n.id,o,t(n.rules,o,"@keyframes"));},this.name=e,this.id="sc-keyframes-".concat(e),this.rules=t,ue(this,function(){throw he(12,String(n.name))});}return e.prototype.getName=function(e){return void 0===e&&(e=Me),this.name+e.hash},e}(),We=function(e){return e>="A"&&e<="Z"};function He(e){for(var t="",n=0;n<e.length;n++){var o=e[n];if(1===n&&"-"===o&&"-"===e[0])return e;We(o)?t+="-"+o.toLowerCase():t+=o;}return t.startsWith("ms-")?"-"+t:t}var Ue=function(e){return null==e||false===e||""===e},Je=function(t){var n,o,r=[];for(var s in t){var i=t[s];t.hasOwnProperty(s)&&!Ue(i)&&(Array.isArray(i)&&i.isCss||re(i)?r.push("".concat(He(s),":"),i,";"):ce(i)?r.push.apply(r,__spreadArray(__spreadArray(["".concat(s," {")],Je(i),false),["}"],false)):r.push("".concat(He(s),": ").concat((n=s,null==(o=i)||"boolean"==typeof o||""===o?"":"number"!=typeof o||0===o||n in unitlessKeys||n.startsWith("--")?String(o).trim():"".concat(o,"px")),";")));}return r};function Xe(e,t,n,o){if(Ue(e))return [];if(se(e))return [".".concat(e.styledComponentId)];if(re(e)){if(!re(s=e)||s.prototype&&s.prototype.isReactComponent||!t)return [e];var r=e(t);return "production"===process.env.NODE_ENV||"object"!=typeof r||Array.isArray(r)||r instanceof qe||ce(r)||null===r||console.error("".concat(B(e)," is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.")),Xe(r,t,n,o)}var s;return e instanceof qe?n?(e.inject(n,o),[e.getName(o)]):[e]:ce(e)?Je(e):Array.isArray(e)?Array.prototype.concat.apply(_,e.map(function(e){return Xe(e,t,n,o)})):[e.toString()]}function Ze(e){for(var t=0;t<e.length;t+=1){var n=e[t];if(re(n)&&!se(n))return  false}return  true}var Ke=M(v),Qe=function(){function e(e,t,n){this.rules=e,this.staticRulesId="",this.isStatic="production"===process.env.NODE_ENV&&(void 0===n||n.isStatic)&&Ze(e),this.componentId=t,this.baseHash=z(Ke,t),this.baseStyle=n,ke.registerId(t);}return e.prototype.generateAndInjectStyles=function(e,t,n){var o=this.baseStyle?this.baseStyle.generateAndInjectStyles(e,t,n):"";if(this.isStatic&&!n.hash)if(this.staticRulesId&&t.hasNameForId(this.componentId,this.staticRulesId))o=ie(o,this.staticRulesId);else {var r=ae(Xe(this.rules,e,t,n)),s=x(z(this.baseHash,r)>>>0);if(!t.hasNameForId(this.componentId,s)){var i=n(r,".".concat(s),void 0,this.componentId);t.insertRules(this.componentId,s,i);}o=ie(o,s),this.staticRulesId=s;}else {for(var a=z(this.baseHash,n.hash),c="",l=0;l<this.rules.length;l++){var u=this.rules[l];if("string"==typeof u)c+=u,"production"!==process.env.NODE_ENV&&(a=z(a,u));else if(u){var p=ae(Xe(u,e,t,n));a=z(a,p+l),c+=p;}}if(c){var d=x(a>>>0);t.hasNameForId(this.componentId,d)||t.insertRules(this.componentId,d,n(c,".".concat(d),void 0,this.componentId)),o=ie(o,d);}}return o},e}(),et=o.createContext(void 0);et.Consumer;var rt={},st=new Set;function it(e,r,s){var i=se(e),a=e,c=!G(e),p=r.attrs,d=void 0===p?_:p,h=r.componentId,f=void 0===h?function(e,t){var n="string"!=typeof e?"sc":R(e);rt[n]=(rt[n]||0)+1;var o="".concat(n,"-").concat($(v+n+rt[n]));return t?"".concat(t,"-").concat(o):o}(r.displayName,r.parentComponentId):h,m=r.displayName,y=void 0===m?function(e){return G(e)?"styled.".concat(e):"Styled(".concat(B(e),")")}(e):m,g=r.displayName&&r.componentId?"".concat(R(r.displayName),"-").concat(r.componentId):r.componentId||f,S=i&&a.attrs?a.attrs.concat(d).filter(Boolean):d,w=r.shouldForwardProp;if(i&&a.shouldForwardProp){var b=a.shouldForwardProp;if(r.shouldForwardProp){var E=r.shouldForwardProp;w=function(e,t){return b(e,t)&&E(e,t)};}else w=b;}var N=new Qe(s,g,i?a.componentStyle:void 0);function O(e,r){return function(e,r,s){var i=e.attrs,a=e.componentStyle,c=e.defaultProps,p=e.foldedComponentIds,d=e.styledComponentId,h=e.target,f=o.useContext(et),m=Le(),y=e.shouldForwardProp||m.shouldForwardProp;"production"!==process.env.NODE_ENV&&o.useDebugValue(d);var v=I(r,f,c)||C,g=function(e,n,o){for(var r,s=__assign(__assign({},n),{className:void 0,theme:o}),i=0;i<e.length;i+=1){var a=re(r=e[i])?r(s):r;for(var c in a)s[c]="className"===c?ie(s[c],a[c]):"style"===c?__assign(__assign({},s[c]),a[c]):a[c];}return n.className&&(s.className=ie(s.className,n.className)),s}(i,r,v),S=g.as||h,w={};for(var b in g) void 0===g[b]||"$"===b[0]||"as"===b||"theme"===b&&g.theme===v||("forwardedAs"===b?w.as=g.forwardedAs:y&&!y(b,S)||(w[b]=g[b],y||"development"!==process.env.NODE_ENV||isPropValid(b)||st.has(b)||!A.has(S)||(st.add(b),console.warn('styled-components: it looks like an unknown prop "'.concat(b,'" is being sent through to the DOM, which will likely trigger a React console error. If you would like automatic filtering of unknown props, you can opt-into that behavior via `<StyleSheetManager shouldForwardProp={...}>` (connect an API like `@emotion/is-prop-valid`) or consider using transient props (`$` prefix for automatic filtering.)')))));var E=function(e,t){var n=Le(),o$1=e.generateAndInjectStyles(t,n.styleSheet,n.stylis);return "production"!==process.env.NODE_ENV&&o.useDebugValue(o$1),o$1}(a,g);"production"!==process.env.NODE_ENV&&e.warnTooManyClasses&&e.warnTooManyClasses(E);var N=ie(p,d);return E&&(N+=" "+E),g.className&&(N+=" "+g.className),w[G(S)&&!A.has(S)?"class":"className"]=N,s&&(w.ref=s),o.createElement(S,w)}(D,e,r)}O.displayName=y;var D=o.forwardRef(O);return D.attrs=S,D.componentStyle=N,D.displayName=y,D.shouldForwardProp=w,D.foldedComponentIds=i?ie(a.foldedComponentIds,a.styledComponentId):"",D.styledComponentId=g,D.target=i?a.target:e,Object.defineProperty(D,"defaultProps",{get:function(){return this._foldedDefaultProps},set:function(e){this._foldedDefaultProps=i?function(e){for(var t=[],n=1;n<arguments.length;n++)t[n-1]=arguments[n];for(var o=0,r=t;o<r.length;o++)le(e,r[o],true);return e}({},a.defaultProps,e):e;}}),"production"!==process.env.NODE_ENV&&(P(y,g),D.warnTooManyClasses=function(e,t){var n={},o=false;return function(r){if(!o&&(n[r]=true,Object.keys(n).length>=200)){var s=t?' with the id of "'.concat(t,'"'):"";console.warn("Over ".concat(200," classes were generated for component ").concat(e).concat(s,".\n")+"Consider using the attrs method, together with a style object for frequently changed styles.\nExample:\n  const Component = styled.div.attrs(props => ({\n    style: {\n      background: props.background,\n    },\n  }))`width: 100%;`\n\n  <Component />"),o=true,n={};}}}(y,g)),ue(D,function(){return ".".concat(D.styledComponentId)}),c&&oe(D,e,{attrs:true,componentStyle:true,displayName:true,foldedComponentIds:true,shouldForwardProp:true,styledComponentId:true,target:true}),D}function at(e,t){for(var n=[e[0]],o=0,r=t.length;o<r;o+=1)n.push(t[o],e[o+1]);return n}var ct=function(e){return Object.assign(e,{isCss:true})};function lt(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];if(re(t)||ce(t))return ct(Xe(at(_,__spreadArray([t],n,true))));var r=t;return 0===n.length&&1===r.length&&"string"==typeof r[0]?Xe(r):ct(Xe(at(r,n)))}function ut(n,o,r){if(void 0===r&&(r=C),!o)throw he(1,o);var s=function(t){for(var s=[],i=1;i<arguments.length;i++)s[i-1]=arguments[i];return n(o,r,lt.apply(void 0,__spreadArray([t],s,false)))};return s.attrs=function(e){return ut(n,o,__assign(__assign({},r),{attrs:Array.prototype.concat(r.attrs,e).filter(Boolean)}))},s.withConfig=function(e){return ut(n,o,__assign(__assign({},r),e))},s}var pt=function(e){return ut(it,e)},dt=pt;A.forEach(function(e){dt[e]=pt(e);});function mt(t){for(var n=[],o=1;o<arguments.length;o++)n[o-1]=arguments[o];"production"!==process.env.NODE_ENV&&"undefined"!=typeof navigator&&"ReactNative"===navigator.product&&console.warn("`keyframes` cannot be used on ReactNative, only on the web. To do animation in ReactNative please use Animated.");var r=ae(lt.apply(void 0,__spreadArray([t],n,false))),s=$(r);return new qe(s,r)}"production"!==process.env.NODE_ENV&&"undefined"!=typeof navigator&&"ReactNative"===navigator.product&&console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native");var wt="__sc-".concat(f,"__");"production"!==process.env.NODE_ENV&&"test"!==process.env.NODE_ENV&&"undefined"!=typeof window&&(window[wt]||(window[wt]=0),1===window[wt]&&console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."),window[wt]+=1);
 
-const Container = dt.div `
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 90vh;
-  background-color: #f5f5f5;
+/**
+ * Typography Mixin
+ *
+ * Apply this to any container component to automatically style HTML tags inside it.
+ * This cascades typography styles to all child elements without needing global styles.
+ * Uses CSS variables set by ThemeProvider for font families.
+ *
+ * @example
+ * ```tsx
+ * import { typographyStyles } from '../styles/typography';
+ *
+ * export const Container = styled.div`
+ *   ${typographyStyles}
+ *   // your other styles...
+ * `;
+ * ```
+ *
+ * Now any HTML inside this container gets automatic styling:
+ * ```tsx
+ * <ThemeProvider theme={sansSerifTheme}>
+ *   <Container>
+ *     <h1>Automatically styled with theme</h1>
+ *     <p>Typography follows theme settings</p>
+ *   </Container>
+ * </ThemeProvider>
+ * ```
+ */
+const typographyStyles = lt `
+  /* Headings - Mobile-first responsive sizing */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font-family, var(--font-family, sans-serif));
+    line-height: 1.2;
+    font-weight: 700;
+    margin-top: 0;
+    color: inherit;
+  }
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 40px;
+
+    @media (min-width: 768px) {
+      font-size: 48px;
+    }
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 32px;
+
+    @media (min-width: 768px) {
+      font-size: 36px;
+    }
+  }
+
+  h3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+
+    @media (min-width: 768px) {
+      font-size: 28px;
+    }
+  }
+
+  h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+      font-size: 24px;
+    }
+  }
+
+  h5 {
+    font-size: 18px;
+    margin-bottom: 16px;
+
+    @media (min-width: 768px) {
+      font-size: 20px;
+    }
+  }
+
+  h6 {
+    font-size: 16px;
+    margin-bottom: 16px;
+
+    @media (min-width: 768px) {
+      font-size: 18px;
+    }
+  }
+
+  /* Body text - Optimal readability */
+  p {
+    font-family: var(--font-family, sans-serif);
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 24px;
+    max-width: 75ch;
+    color: inherit;
+  }
+
+  /* Lead paragraph variant - use class="lead" */
+  p.lead {
+    font-size: 18px;
+    margin-bottom: 28px;
+
+    @media (min-width: 768px) {
+      font-size: 20px;
+    }
+  }
+
+  /* Small text - use <small> tag */
+  small {
+    font-family: var(--font-family, sans-serif);
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 12px;
+    color: inherit;
+  }
+
+  /* Lists - Proper spacing */
+  ul, ol {
+    font-family: var(--font-family, sans-serif);
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 24px;
+    padding-left: 24px;
+    max-width: 75ch;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+
+  /* Strong and emphasis */
+  strong, b {
+    font-weight: 700;
+  }
+
+  em, i {
+    font-style: italic;
+  }
 `;
 
-const Page = ({ title, children }) => {
-    return (jsxRuntime.jsxs(Container, { "data-testid": "page-container", children: [jsxRuntime.jsx("h1", { children: title }), jsxRuntime.jsx(jsxRuntime.Fragment, { children: children })] }));
+const Container$6 = dt.div `
+  width: 100%;
+  ${typographyStyles}
+`;
+
+const Page = ({ children, ...props }) => {
+    return (jsxRuntime.jsx(Container$6, { "data-testid": "page-container", ...props, children: children }));
 };
 
+const Container$5 = dt.section `
+  width: 100%;
+  
+  /* Apply typography styles to all HTML tags inside Section */
+  ${typographyStyles}
+`;
+const Inner$1 = dt.div `
+  max-width: ${props => props.$fullWidth ? "100%" : "1200px"};
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  
+  &:has(> [data-column]) {
+    flex-direction: row;
+    gap: ${props => props.$gap || "20px"};
+    
+    @media (max-width: ${props => props.$mobileBreakpoint || "768px"}) {
+      flex-direction: column;
+    }
+  }
+`;
+const Column = dt.div `
+  flex: ${props => props.$width || 1};
+  min-width: 0;
+`;
+
+const SectionInner = ({ children, fullWidth = false, gap, mobileBreakpoint, ...props }) => {
+    return jsxRuntime.jsx(Inner$1, { "data-testid": "section-inner", "$fullWidth": fullWidth, "$gap": gap, "$mobileBreakpoint": mobileBreakpoint, ...props, children: children });
+};
+const SectionColumn = ({ children, width, ...props }) => {
+    return jsxRuntime.jsx(Column, { "data-testid": "section-column", "data-column": "true", "$width": width, ...props, children: children });
+};
+const Section = ({ children, ...props }) => {
+    return jsxRuntime.jsx(Container$5, { "data-testid": "section-container", ...props, children: children });
+};
+Section.Inner = SectionInner;
+Section.Column = SectionColumn;
+
+const Container$4 = dt.div `
+  position: relative;
+  width: 100%;
+  aspect-ratio: ${(props) => props.$aspectRatio || "auto"};
+  overflow: hidden;
+  border-radius: ${(props) => {
+    switch (props.$rounded) {
+        case "sm":
+            return "4px";
+        case "md":
+            return "8px";
+        case "lg":
+            return "16px";
+        case "full":
+            return "9999px";
+        default:
+            return "0";
+    }
+}};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+const StyledImage = dt.img `
+  width: 100%;
+  height: 100%;
+  object-fit: ${(props) => props.$objectFit || "cover"};
+  display: block;
+`;
+
+/**
+ * Image Component
+ *
+ * An atom component for displaying images with consistent aspect ratios and object-fit behavior.
+ * Handles different image sizes gracefully by cropping/fitting as needed.
+ *
+ * Best Practices:
+ * - Always provide descriptive alt text for accessibility
+ * - Use aspect ratios to maintain visual consistency across different image sizes
+ * - Default to "cover" object-fit for professional appearance
+ * - Lazy loading enabled by default for performance
+ *
+ * @example
+ * ```tsx
+ * <Image
+ *   src="https://example.com/image.jpg"
+ *   alt="Product screenshot"
+ *   aspectRatio="16/9"
+ *   rounded="md"
+ * />
+ * ```
+ */
+const Image = ({ src, alt, aspectRatio = "auto", objectFit = "cover", rounded = "none", loading = "lazy", ...props }) => {
+    return (jsxRuntime.jsx(Container$4, { "data-testid": "image-container", "$aspectRatio": aspectRatio, "$rounded": rounded, children: jsxRuntime.jsx(StyledImage, { "data-testid": "image-element", src: src, alt: alt, loading: loading, "$objectFit": objectFit, ...props }) }));
+};
+
+const Container$3 = dt.div `
+  width: 100%;
+  height: ${(props) => {
+    switch (props.$size) {
+        case "xs":
+            return "8px";
+        case "sm":
+            return "16px";
+        case "md":
+            return "24px";
+        case "lg":
+            return "32px";
+        case "xl":
+            return "48px";
+        case "2xl":
+            return "64px";
+        case "3xl":
+            return "96px";
+        default:
+            return "24px";
+    }
+}};
+`;
+
+/**
+ * Spacer - Vertical spacing component
+ *
+ * Provides consistent vertical spacing between sections and elements.
+ * Use to control vertical rhythm and improve readability.
+ *
+ * @example
+ * ```tsx
+ * <Heading1>Title</Heading1>
+ * <Spacer size="lg" />
+ * <Heading2>Subtitle</Heading2>
+ * ```
+ */
+const Spacer = ({ size = "md", ...props }) => {
+    return jsxRuntime.jsx(Container$3, { "$size": size, "data-testid": "spacer", ...props });
+};
+
+const spin = mt `
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+`;
+const StyledButton = dt.button `
+  /* Base styles - minimal, developers will extend */
+  font-family: var(--font-family, sans-serif);
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: ${props => props.$isLoading ? "wait" : "pointer"};
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  position: relative;
+  
+  /* Full width option */
+  width: ${props => props.$fullWidth ? "100%" : "auto"};
+  
+  /* Size variants - ensuring minimum 44x44px touch target */
+  ${props => {
+    switch (props.$size) {
+        case "small":
+            return `
+          font-size: 14px;
+          padding: 8px 16px;
+          min-height: 36px;
+        `;
+        case "large":
+            return `
+          font-size: 18px;
+          padding: 16px 32px;
+          min-height: 56px;
+        `;
+        case "medium":
+        default:
+            return `
+          font-size: 16px;
+          padding: 12px 24px;
+          min-height: 44px;
+        `;
+    }
+}}
+  
+  /* Variant styles - bare minimum, developers will customize */
+  ${props => {
+    switch (props.$variant) {
+        case "secondary":
+            return `
+          background-color: #f5f5f5;
+          color: #333;
+          
+          &:hover:not(:disabled) {
+            background-color: #e8e8e8;
+          }
+          
+          &:active:not(:disabled) {
+            background-color: #d8d8d8;
+          }
+        `;
+        case "outline":
+            return `
+          background-color: #f5f5f5;
+          color: #333;
+          
+          &:hover:not(:disabled) {
+            background-color: #e8e8e8;
+          }
+          
+          &:active:not(:disabled) {
+            background-color: #d8d8d8;
+          }
+        `;
+        case "primary":
+        default:
+            return `
+          background-color: #000;
+          color: #fff;
+          
+          &:hover:not(:disabled) {
+            background-color: #333;
+          }
+          
+          &:active:not(:disabled) {
+            background-color: #555;
+          }
+        `;
+    }
+}}
+  
+  /* Disabled state */
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* Focus state - accessibility */
+  &:focus-visible {
+    outline: 3px solid rgba(0, 0, 0, 0.3);
+    outline-offset: 2px;
+  }
+  
+  /* Loading state */
+  ${props => props.$isLoading && `
+    pointer-events: none;
+  `}
+`;
+const LoadingSpinner = dt.span `
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: ${spin} 0.6s linear infinite;
+`;
+const IconWrapper = dt.span `
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+/**
+ * Button Component
+ *
+ * CTA-optimized button for landing pages following best practices:
+ *
+ * - **Action-oriented**: Design for verbs like "Get", "Start", "Join", "Try"
+ * - **Benefit-focused**: Use text like "Get My Free Guide" not "Submit"
+ * - **Accessible**: 44x44px minimum touch target, keyboard navigable
+ * - **Visual prominence**: Primary variant for main CTAs
+ * - **Loading states**: Built-in support for async actions
+ * - **Flexible sizing**: Small, medium (default), large options
+ *
+ * @example
+ * ```tsx
+ * // Primary CTA (default)
+ * <Button>Get Started Free</Button>
+ *
+ * // Secondary action
+ * <Button variant="secondary">Learn More</Button>
+ *
+ * // With loading state
+ * <Button isLoading>Processing...</Button>
+ *
+ * // Large prominent CTA
+ * <Button size="large">Start Free Trial</Button>
+ *
+ * // With icons
+ * <Button iconAfter={<ArrowIcon />}>Continue</Button>
+ * ```
+ */
+const Button = ({ variant = "primary", size = "medium", fullWidth = false, isLoading = false, iconBefore, iconAfter, children, disabled, ...props }) => {
+    return (jsxRuntime.jsxs(StyledButton, { "$variant": variant, "$size": size, "$fullWidth": fullWidth, "$isLoading": isLoading, disabled: disabled || isLoading, "data-testid": "button", ...props, children: [isLoading && jsxRuntime.jsx(LoadingSpinner, { "data-testid": "loading-spinner" }), !isLoading && iconBefore && (jsxRuntime.jsx(IconWrapper, { "data-testid": "icon-before", children: iconBefore })), children, !isLoading && iconAfter && (jsxRuntime.jsx(IconWrapper, { "data-testid": "icon-after", children: iconAfter }))] }));
+};
+
+const Container$2 = dt.div `
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: ${(props) => props.$align || "left"};
+`;
+const ImageWrapper = dt.div `
+  display: flex;
+  justify-content: ${(props) => props.$align === "center" ? "center" : props.$align === "right" ? "flex-end" : "flex-start"};
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+`;
+const HeadlineWrapper = dt.div `
+  /* Override typography margins for tighter spacing in cards */
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+  }
+`;
+const DescriptionWrapper = dt.div `
+  /* Override typography margins for tighter spacing in cards */
+  p {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+`;
+const CTAWrapper = dt.div `
+  /* CTA styling is inherited from passed element */
+`;
+
+/**
+ * FeatureCard Component
+ *
+ * A molecule component for displaying a single feature with image, headline, description, and optional CTA.
+ * Designed for landing pages following conversion optimization best practices.
+ *
+ * Best Practices from Research:
+ * - Headlines: 3-7 words, benefit-focused (not feature-focused)
+ * - Descriptions: 2-3 sentences maximum for scannability
+ * - Images: Visual hierarchy and quick recognition
+ * - Groups of 3-6 features optimal (cognitive load)
+ *
+ * Image Usage:
+ * - **Full-width images**: Pass Image component without size constraints for hero-style feature cards
+ * - **Icons**: Pass Image with explicit width/height or icon elements for traditional feature displays
+ *
+ * @example
+ * ```tsx
+ * // With full-width image (most common)
+ * <FeatureCard
+ *   image={<Image src="feature.jpg" alt="Feature" aspectRatio="16/9" />}
+ *   headline={<h3>Premium Product</h3>}
+ *   description={<p>Enterprise-grade solution.</p>}
+ * />
+ *
+ * // With icon
+ * <FeatureCard
+ *   image={<Image src="icon.jpg" alt="Fast" aspectRatio="1/1" width={64} height={64} />}
+ *   headline={<h3>Lightning Fast</h3>}
+ *   description={<p>Load times under 1 second.</p>}
+ * />
+ * ```
+ */
+const FeatureCard = ({ children, image, headline, description, cta, align = "left", ...props }) => {
+    return (jsxRuntime.jsxs(Container$2, { "data-testid": "feature-card-container", "$align": align, ...props, children: [image && (jsxRuntime.jsx(ImageWrapper, { "data-testid": "feature-card-image", "$align": align, children: image })), headline && (jsxRuntime.jsx(HeadlineWrapper, { "data-testid": "feature-card-headline", children: headline })), description && (jsxRuntime.jsx(DescriptionWrapper, { "data-testid": "feature-card-description", children: description })), cta && jsxRuntime.jsx(CTAWrapper, { "data-testid": "feature-card-cta", children: cta }), children] }));
+};
+
+const Container$1 = dt.div `
+  font-family: sans-serif;
+  position: relative;
+  width: 100%;
+  display: ${(props) => (props.$controlsPosition === "inline" ? "flex" : "block")};
+  align-items: ${(props) => (props.$controlsPosition === "inline" ? "center" : "normal")};
+  gap: ${(props) => (props.$controlsPosition === "inline" ? "16px" : "0")};
+`;
+const Track = dt.div `
+  overflow: hidden;
+  width: ${(props) => (props.$controlsPosition === "inline" ? "auto" : "100%")};
+  flex: ${(props) => (props.$controlsPosition === "inline" ? "1" : "none")};
+`;
+const ItemsWrapper = dt.div `
+  display: flex;
+  gap: ${(props) => props.$gap}px;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(${(props) => props.$translateX}px);
+`;
+const Item = dt.div `
+  flex: 0 0 ${(props) => props.$itemWidth};
+  width: ${(props) => props.$itemWidth};
+`;
+const Controls = dt.div `
+  display: flex;
+  justify-content: ${(props) => (props.$controlsPosition === "inline" ? "space-between" : "center")};
+  align-items: center;
+  gap: 16px;
+  margin-top: ${(props) => (props.$controlsPosition === "inline" ? "0" : "24px")};
+  width: ${(props) => (props.$controlsPosition === "inline" ? "auto" : "100%")};
+`;
+const ArrowButton = dt.button `
+  background: #f0f0f0;
+  border: none;
+  font-size: 24px;
+  cursor: ${(props) => (props.$disabled ? "not-allowed" : "pointer")};
+  opacity: ${(props) => (props.$disabled ? 0.3 : 1)};
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  color: inherit;
+  flex-shrink: 0;
+
+  &:hover {
+    opacity: ${(props) => (props.$disabled ? 0.3 : 0.8)};
+    background: ${(props) => (props.$disabled ? "#f0f0f0" : "#e0e0e0")};
+  }
+
+  &:focus {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: ${(props) => (props.$disabled ? "none" : "scale(0.95)")};
+  }
+`;
+
+/**
+ * Carousel component for displaying a scrollable list of items
+ *
+ * @example
+ * ```tsx
+ * <Carousel
+ *   items={[
+ *     <Image src="image1.jpg" alt="Image 1" />,
+ *     <Image src="image2.jpg" alt="Image 2" />,
+ *     <Image src="image3.jpg" alt="Image 3" />,
+ *   ]}
+ *   itemsPerView={3}
+ *   gap={16}
+ * />
+ * ```
+ */
+const Carousel = ({ items, itemsPerView = 1, gap = 16, controlsPosition = "bottom", customLeftArrow, customRightArrow, ...props }) => {
+    const [currentIndex, setCurrentIndex] = o.useState(0);
+    const [itemWidth, setItemWidth] = o.useState(0);
+    const trackRef = o.useRef(null);
+    const touchStartX = o.useRef(0);
+    const touchEndX = o.useRef(0);
+    o.useEffect(() => {
+        const updateItemWidth = () => {
+            if (trackRef.current) {
+                const trackWidth = trackRef.current.offsetWidth;
+                const totalGap = gap * (itemsPerView - 1);
+                const width = (trackWidth - totalGap) / itemsPerView;
+                setItemWidth(width);
+            }
+        };
+        updateItemWidth();
+        window.addEventListener("resize", updateItemWidth);
+        return () => window.removeEventListener("resize", updateItemWidth);
+    }, [itemsPerView, gap]);
+    const maxIndex = Math.max(0, items.length - itemsPerView);
+    const canGoPrev = currentIndex > 0;
+    const canGoNext = currentIndex < maxIndex;
+    const handlePrev = () => {
+        if (canGoPrev) {
+            setCurrentIndex((prev) => prev - 1);
+        }
+    };
+    const handleNext = () => {
+        if (canGoNext) {
+            setCurrentIndex((prev) => prev + 1);
+        }
+    };
+    const handleTouchStart = (e) => {
+        if (e.touches[0]) {
+            touchStartX.current = e.touches[0].clientX;
+        }
+    };
+    const handleTouchMove = (e) => {
+        if (e.touches[0]) {
+            touchEndX.current = e.touches[0].clientX;
+        }
+    };
+    const handleTouchEnd = () => {
+        const swipeDistance = touchStartX.current - touchEndX.current;
+        const minSwipeDistance = 50; // minimum pixels to trigger swipe
+        if (Math.abs(swipeDistance) > minSwipeDistance) {
+            if (swipeDistance > 0) {
+                // Swiped left, go next
+                handleNext();
+            }
+            else {
+                // Swiped right, go prev
+                handlePrev();
+            }
+        }
+        touchStartX.current = 0;
+        touchEndX.current = 0;
+    };
+    const translateX = -(currentIndex * (itemWidth + gap));
+    const itemWidthPercent = `calc((100% - ${gap * (itemsPerView - 1)}px) / ${itemsPerView})`;
+    const prevButton = (jsxRuntime.jsx(ArrowButton, { onClick: handlePrev, "$disabled": !canGoPrev, disabled: !canGoPrev, "aria-label": "Previous", "data-testid": "carousel-prev", children: customLeftArrow || "◄" }));
+    const nextButton = (jsxRuntime.jsx(ArrowButton, { onClick: handleNext, "$disabled": !canGoNext, disabled: !canGoNext, "aria-label": "Next", "data-testid": "carousel-next", children: customRightArrow || "►" }));
+    if (controlsPosition === "inline") {
+        return (jsxRuntime.jsxs(Container$1, { "data-testid": "carousel-container", "$controlsPosition": controlsPosition, ...props, children: [prevButton, jsxRuntime.jsx(Track, { ref: trackRef, "data-testid": "carousel-track", "$controlsPosition": controlsPosition, onTouchStart: handleTouchStart, onTouchMove: handleTouchMove, onTouchEnd: handleTouchEnd, children: jsxRuntime.jsx(ItemsWrapper, { "$translateX": translateX, "$gap": gap, children: items.map((item, index) => (jsxRuntime.jsx(Item, { "$itemWidth": itemWidthPercent, "data-testid": `carousel-item-${index}`, children: item }, index))) }) }), nextButton] }));
+    }
+    return (jsxRuntime.jsxs(Container$1, { "data-testid": "carousel-container", "$controlsPosition": controlsPosition, ...props, children: [jsxRuntime.jsx(Track, { ref: trackRef, "data-testid": "carousel-track", "$controlsPosition": controlsPosition, onTouchStart: handleTouchStart, onTouchMove: handleTouchMove, onTouchEnd: handleTouchEnd, children: jsxRuntime.jsx(ItemsWrapper, { "$translateX": translateX, "$gap": gap, children: items.map((item, index) => (jsxRuntime.jsx(Item, { "$itemWidth": itemWidthPercent, "data-testid": `carousel-item-${index}`, children: item }, index))) }) }), jsxRuntime.jsxs(Controls, { "$controlsPosition": controlsPosition, children: [prevButton, nextButton] })] }));
+};
+
+/**
+ * Main container for Hero section
+ * Full-width section element
+ */
+const Container = dt.section `
+  width: 100%;
+  ${typographyStyles}
+`;
+/**
+ * Inner content wrapper with max-width and padding
+ */
+const Inner = dt.div `
+  max-width: 1200px;
+  margin: 0 auto;    
+  text-align: ${props => props.$align === "center" ? "center" : "left"};
+`;
+/**
+ * Flex container for content and media columns
+ */
+const Content = dt.div `
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  
+  @media (min-width: 768px) {
+    flex-direction: ${props => {
+    if (props.$layout === "centered")
+        return "column";
+    if (props.$layout === "reversed")
+        return "row-reverse";
+    return "row";
+}};
+    gap: 60px;
+  }
+`;
+/**
+ * Text content column
+ */
+const TextContent = dt.div `
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+  ${props => props.$layout === "centered" && `
+    align-items: center;
+    max-width: 800px;
+  `}
+`;
+/**
+ * Media content column
+ */
+const MediaContent = dt.div `
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  
+  img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+`;
+/**
+ * Headline wrapper
+ */
+const Headline = dt.div `
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: bold;
+    
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
+  }
+`;
+/**
+ * Subheadline wrapper
+ */
+const Subheadline = dt.div `
+  font-size: 1.125rem;
+  line-height: 1.6;
+  
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+  }
+  
+  p {
+    margin: 0;
+  }
+`;
+/**
+ * CTA buttons container
+ */
+const CTAGroup = dt.div `
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 16px;
+    ${props => props.$align === "center" ? "justify-content: center;" : ""}
+  }
+  
+  button, a {
+    min-height: 44px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+`;
+
+/**
+ * Hero Component
+ *
+ * A conversion-optimized hero section for landing pages.
+ * Supports headline, subheadline, CTAs, and media content.
+ *
+ * Best Practices:
+ * - Headline: 6-12 words, benefit-focused
+ * - Subheadline: Supporting context
+ * - Primary CTA: Action-oriented ("Get Started", "Try Free")
+ * - Secondary CTA: Lower commitment ("Learn More")
+ *
+ * @example
+ * ```tsx
+ * <Hero
+ *   headline={<h1>Increase Sales by 47%</h1>}
+ *   subheadline={<p>AI-powered email subject lines that convert</p>}
+ *   primaryCTA={<button>Start Free Trial</button>}
+ *   secondaryCTA={<button>Watch Demo</button>}
+ *   media={<img src="product.png" alt="Product screenshot" />}
+ * />
+ * ```
+ */
+const Hero = ({ headline, subheadline, primaryCTA, secondaryCTA, media, layout = "default", align = "left", ...props }) => {
+    return (jsxRuntime.jsx(Container, { "data-testid": "hero-container", ...props, children: jsxRuntime.jsx(Inner, { "$align": align, children: jsxRuntime.jsxs(Content, { "$layout": layout, children: [jsxRuntime.jsxs(TextContent, { "$layout": layout, children: [headline && (jsxRuntime.jsx(Headline, { "data-testid": "hero-headline", children: headline })), subheadline && (jsxRuntime.jsx(Subheadline, { "data-testid": "hero-subheadline", children: subheadline })), (primaryCTA || secondaryCTA) && (jsxRuntime.jsxs(CTAGroup, { "$align": align, "data-testid": "hero-cta-group", children: [primaryCTA, secondaryCTA] }))] }), media && layout !== "centered" && (jsxRuntime.jsx(MediaContent, { "data-testid": "hero-media", children: media }))] }) }) }));
+};
+
+/**
+ * Light Theme
+ *
+ * Clean, bright theme optimized for daytime viewing.
+ * Features dark text on light backgrounds with subtle, professional accent colors.
+ */
+const lightTheme = {
+    name: "light",
+    typography: {
+        fontFamily: "sans-serif",
+        headingFontFamily: "sans-serif",
+        monospaceFontFamily: "monospace",
+    },
+    colors: {
+        primary: "#2c5f8d",
+        secondary: "#5a6c7d",
+        background: "#ffffff",
+        text: "#1a202c",
+        textOnPrimary: "#ffffff",
+        textOnSecondary: "#ffffff",
+    },
+};
+/**
+ * Dark Theme
+ *
+ * Modern dark theme optimized for low-light environments and reduced eye strain.
+ * Features light text on dark backgrounds with soft, accessible accent colors.
+ */
+const darkTheme = {
+    name: "dark",
+    typography: {
+        fontFamily: "sans-serif",
+        headingFontFamily: "sans-serif",
+        monospaceFontFamily: "monospace",
+    },
+    colors: {
+        primary: "#7fa8c9",
+        secondary: "#9aa5b1",
+        background: "#1a202c",
+        text: "#f7fafc",
+        textOnPrimary: "#1a202c",
+        textOnSecondary: "#1a202c",
+    },
+};
+/**
+ * Default theme used when no theme is explicitly provided
+ */
+const defaultTheme = lightTheme;
+
+/**
+ * Theme Context
+ *
+ * Provides theme configuration throughout the component tree.
+ */
+const ThemeContext = o.createContext(defaultTheme);
+/**
+ * ThemeProvider Component
+ *
+ * Wraps your application to provide theme configuration to all components.
+ * Injects CSS variables for typography and color system.
+ * Currently supports light and dark themes.
+ *
+ * @example
+ * ```tsx
+ * import { ThemeProvider, lightTheme, darkTheme } from 'your-library';
+ *
+ * function App() {
+ *   return (
+ *     <ThemeProvider theme={lightTheme}>
+ *       <YourComponents />
+ *     </ThemeProvider>
+ *   );
+ * }
+ * ```
+ */
+const ThemeProvider = ({ theme, children, }) => {
+    const memoizedTheme = o.useMemo(() => theme, [theme]);
+    // Convert theme to CSS variables
+    const cssVariables = o.useMemo(() => ({
+        "--font-family": memoizedTheme.typography.fontFamily,
+        "--heading-font-family": memoizedTheme.typography.headingFontFamily ||
+            memoizedTheme.typography.fontFamily,
+        "--mono-font-family": memoizedTheme.typography.monospaceFontFamily,
+        "--color-primary": memoizedTheme.colors.primary,
+        "--color-secondary": memoizedTheme.colors.secondary,
+        "--color-background": memoizedTheme.colors.background,
+        "--color-text": memoizedTheme.colors.text,
+        "--color-text-on-primary": memoizedTheme.colors.textOnPrimary,
+        "--color-text-on-secondary": memoizedTheme.colors.textOnSecondary,
+    }), [memoizedTheme]);
+    return (jsxRuntime.jsx(ThemeContext.Provider, { value: memoizedTheme, children: jsxRuntime.jsx("div", { style: cssVariables, children: children }) }));
+};
+/**
+ * useTheme Hook
+ *
+ * Access the current theme from any component within a ThemeProvider.
+ *
+ * @returns The current theme object
+ *
+ * @example
+ * ```tsx
+ * function MyComponent() {
+ *   const theme = useTheme();
+ *   return <div style={{ fontFamily: theme.typography.fontFamily }}>Hello</div>;
+ * }
+ * ```
+ */
+const useTheme = () => {
+    const context = o.useContext(ThemeContext);
+    if (!context) {
+        // Return default theme if used outside provider
+        return defaultTheme;
+    }
+    return context;
+};
+
+exports.Button = Button;
+exports.Carousel = Carousel;
+exports.FeatureCard = FeatureCard;
+exports.Hero = Hero;
+exports.Image = Image;
 exports.Page = Page;
+exports.Section = Section;
+exports.Spacer = Spacer;
+exports.ThemeProvider = ThemeProvider;
+exports.darkTheme = darkTheme;
+exports.defaultTheme = defaultTheme;
+exports.lightTheme = lightTheme;
+exports.typographyStyles = typographyStyles;
+exports.useTheme = useTheme;
 //# sourceMappingURL=index.js.map
